@@ -1,12 +1,30 @@
 name: Hello World
+
 on: push
+
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      # Checkout du dépôt
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Installation de Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm i -g bats
-      - run: bats -v  
+
+      # Hello World
+      - name: Hello World
+        run: echo "Hello World"
+
+      # Installation de bats
+      - name: Install bats
+        run: npm i -g bats
+
+      # Vérification de la version
+      - name: Bats version
+        run: bats -v
