@@ -1,4 +1,4 @@
-name: learn-github-actions
+name: Hello World
 on: push
 jobs:
   check-bats-version:
@@ -10,4 +10,3 @@ jobs:
           node-version: '20'
       - run: npm i -g bats
       - run: bats -v  
-      
