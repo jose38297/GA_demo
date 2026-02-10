@@ -1,0 +1,17 @@
+name: Creer Issue
+
+on:
+  issues:
+    types: [opened]  
+
+env:
+  MSG_ISSUE: "Issue créée"
+
+jobs:
+  lancement_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Afficher le message
+        run: echo $MSG_ISSUE
+
+
