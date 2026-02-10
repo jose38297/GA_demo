@@ -1,9 +1,5 @@
 name: Push or Pull
-on: 
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: [push, pull_request]
 env:
   MSG_PUSH : "c'est un push ! "
   MSG_PULL: " c'est une pull request ! "
