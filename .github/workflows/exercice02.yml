@@ -1,8 +1,5 @@
 name: Push or Pull
-on: 
-  push:
-  pull_request: 
-  workflow_dispatch
+on: [push, pull_request]
 env:
   MSG_PUSH : "c'est un push ! "
   MSG_PULL: " c'est une pull request ! "
@@ -13,7 +10,7 @@ jobs:
     steps:
       - name: "faire un push"
         run: echo " ${{ env.MSG_PUSH }}"
-    
+  
   le_pull_request :
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request'}}
