@@ -1,20 +1,19 @@
-name: Amenesia
+name: Amnesia
 
-#event trigger qui implique de déclacher le workflow manuellement
+# Event trigeer qui implique de déclencher le workflow manuellement
 on: workflow_dispatch
 
 env:
-  NAME: aksil_guedj
-  
+  NAME: François
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     env:
-      ENTREPRISE: semifir
+      ENTERPRISE: semifir
     steps:
       - name: "Dit bonjour"
-        run: echo "Salut $NAME ! Tu travailles chez $ENTREPRISE ? Alors bon $SAY à toi!
+        run: echo "Salut $NAME !  Tu travailles chez $ENTERPRISE ? Alors bon $DAY à toi !"
         env:
           DAY: mardi
       - name: "Mardi ?"
@@ -23,6 +22,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Dit au revoir"
-        run: echo "Au revoir $NAME ! Tu travailles pour quelle entreprise? $ENTREPRISE ? "
-
-
+        run: echo "Au revoir $NAME ! Tu travailles pour quelle entreprise ? $ENTERPRISE ?"
