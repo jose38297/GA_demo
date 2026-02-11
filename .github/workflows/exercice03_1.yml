@@ -1,0 +1,14 @@
+name: Merge PR
+on: pull_request
+  type :
+    - closed
+env:
+  MSG_MERGE : " La PR est mergée. "
+jobs:
+  PR_merge :
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == True }}
+    steps:
+      - name: "faire un PR"
+        run: echo " ${{ env.MSG_MERGE }}"
+  
