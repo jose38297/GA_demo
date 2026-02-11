@@ -1,0 +1,15 @@
+name: Workflow suivant
+
+on:
+  workflow_run:
+    workflows: ["PR merge detected"]
+    types:
+      - completed
+
+jobs:
+  after_merge_pr:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Message après le workflow précédent
+        run: echo "Le workflow Merge PR est terminé avec succès"
